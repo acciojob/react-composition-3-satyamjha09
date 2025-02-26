@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import "./Tooltip.css"; // Ensure styles are correctly applied
+import "./Tooltip.css";
 
 const Tooltip = ({ text, children }) => {
   const [visible, setVisible] = useState(false);
 
   return (
     <div 
-      className="tooltip"
+      className="tooltip-container"
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >
-      {children}
-      {visible && <div className="tooltiptext">{text}</div>}
+      <div className="tooltip-target">{children}</div>
+      {visible && <div className="tooltip-text">{text}</div>}
     </div>
   );
 };
