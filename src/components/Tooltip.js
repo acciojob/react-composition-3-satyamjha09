@@ -7,11 +7,15 @@ const Tooltip = ({ text, children }) => {
   return (
     <div
       className="tooltip"
-      onMouseEnter={() => setVisible(true)}
-      onMouseLeave={() => setVisible(false)}
+      onMouseEnter={() => setTimeout(() => setVisible(true), 100)} // Delay for Cypress
+      onMouseLeave={() => setTimeout(() => setVisible(false), 100)}
     >
       {children}
-      <div className={`tooltiptext ${visible ? "visible" : "hidden"}`} role="tooltip">
+      <div
+        className={`tooltiptext ${visible ? "visible" : "hidden"}`}
+        role="tooltip"
+        data-testid="tooltip" // Helps Cypress detect it
+      >
         {text}
       </div>
     </div>
