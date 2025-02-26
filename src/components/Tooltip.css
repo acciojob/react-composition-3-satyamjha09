@@ -14,8 +14,20 @@
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
+    visibility: hidden;  /* Changed from opacity: 0 */
+    transition: visibility 0.3s, opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .tooltiptext.visible {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.3s;
+    pointer-events: auto;
+  }
+  
+  .tooltiptext.hidden {
+    visibility: hidden;
+    opacity: 0;
   }
   

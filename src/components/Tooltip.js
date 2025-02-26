@@ -1,4 +1,3 @@
-// Tooltip.js
 import React, { useState } from "react";
 import "./Tooltip.css";
 
@@ -12,7 +11,9 @@ const Tooltip = ({ text, children }) => {
       onMouseLeave={() => setVisible(false)}
     >
       {children}
-      {visible && <div className="tooltiptext">{text}</div>}
+      <div className={`tooltiptext ${visible ? "visible" : "hidden"}`} role="tooltip">
+        {text}
+      </div>
     </div>
   );
 };
