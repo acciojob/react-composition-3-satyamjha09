@@ -1,29 +1,21 @@
-.tooltip-container {
+.tooltip {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100px;
+    display: inline-block;
   }
   
-  .tooltip-text {
-    visibility: visible;
-    background-color: red;
+  .tooltiptext {
+    position: absolute;
+    background-color: black;
     color: white;
     text-align: center;
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 5px;
-    position: absolute;
-    bottom: 120%;
+    bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .tooltip-container:hover .tooltip-text {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
   }
   
