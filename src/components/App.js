@@ -1,26 +1,23 @@
-
 import React from "react";
-import './../styles/App.css';
 import Tooltip from "./Tooltip";
+import "./Tooltip.css"; // Ensure styles are correctly applied
 
 const App = () => {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>React Tooltip Example</h1>
+    <div style={{ padding: "50px", textAlign: "center" }}>
+      <Tooltip text="This is a tooltip for a heading">
+        <h2>Hover over this heading</h2>
+      </Tooltip>
 
-      <h2>
-        <Tooltip text="This is a tooltip for the button">
-          <button>Hover me</button>
-        </Tooltip>
-      </h2>
+      <Tooltip text="Tooltip for a paragraph">
+        <p>Hover over this paragraph</p>
+      </Tooltip>
 
-      <p>
-        <Tooltip text="Another tooltip for a text">
-          <span style={{ color: "blue", cursor: "pointer" }}>Hover over me!</span>
-        </Tooltip>
-      </p>
+      <Tooltip text="Tooltip for a button">
+        <button>Hover over this button</button>
+      </Tooltip>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
